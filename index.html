@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Pet Care Tracker (ติดตามการดูแลสัตว์เลี้ยง)</h2>
+        <div class="add-pet-type">
+            <h2>เพิ่มประเภทสัตว์เลี้ยง</h2>
+            <input type="text" id="newPetType" placeholder="ประเภทสัตว์เลี้ยงใหม่">
+            <button onclick="addPetType()">เพิ่มประเภท</button>
+        </div>
+
+        <!-- ส่วนแสดงรายการประเภทสัตว์เลี้ยง -->
+        <div class="pet-type-list">
+            <h2>รายการประเภทสัตว์เลี้ยง</h2>
+        <table id="petTypeTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ประเภทสัตว์เลี้ยง</th>
+                    <th>การจัดการ</th>
+                </tr>
+            </thead>
+            <tbody id="petTypeList"></tbody>
+        </table>
+        </div>
+        <br>
+        <hr>
+        <br>
+        <form id="petForm">
+            <label for="petName">ชื่อสัตว์เลี้ยง:</label>
+            <input type="text" id="petName" required>
+
+            <label for="petType">ประเภทสัตว์เลี้ยง:</label>
+            <select id="petType" required>
+            </select>
+
+            <label for="careDate">วันที่:</label>
+            <input type="date" id="careDate" required>
+
+            <label for="careDescription">รายละเอียดการดูแล:</label>
+            <textarea id="careDescription" rows="10" required></textarea>
+
+            <button type="submit">บันทึก</button>
+        </form>
+
+        <h2>บันทึกการดูแลสัตว์เลี้ยง</h2>
+        <!-- เมนูเลือกประเภทสัตว์เลี้ยงสำหรับการแสดงผล -->
+        <label for="filterPetType">แสดงข้อมูลประเภท:</label>
+        <select id="filterPetType">
+            <option value="ทั้งหมด">ทั้งหมด</option>
+            <!-- ประเภทสัตว์เลี้ยงจะถูกเพิ่มโดย JavaScript -->
+        </select>
+
+        <div id="scrollView" class="scroll-view">
+            <ul id="petRecords"></ul>
+        </div>
+
+        <div class="pagination">
+            <button id="prevPage">ก่อนหน้า</button>
+            <span id="pageInfo"></span>
+            <button id="nextPage">ถัดไป</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
