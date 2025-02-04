@@ -26,6 +26,7 @@ function addPetType() {
             petTypes.push(newPetType);
             localStorage.setItem('petTypes', JSON.stringify(petTypes));
             updatePetTypeSelectors();
+            displayPetTypeList();
             document.getElementById('newPetType').value = ''; // ล้าง input
         } else {
             alert('ประเภทนี้มีอยู่แล้ว!');
